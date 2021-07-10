@@ -2,19 +2,10 @@
   <ol class="list-reset py-4 pl-4 rounded flex bg-grey-light text-grey">
     <li class="px-2">
       <a
-        [routerLink]="['/branch', branchId]"
+        [routerLink]="['/branch', branch.branch_id]"
         routerLinkActive="underline"
         class="no-underline text-indigo"
         >{{ branch.name }}</a
-      >
-    </li>
-    /
-    <li class="px-2">
-      <a
-        [routerLink]="['/category', categoryName]"
-        routerLinkActive="underline"
-        class="no-underline text-indigo"
-        >{{ categoryName }}</a
       >
     </li>
   </ol>
@@ -22,18 +13,18 @@
 <section class="text-gray-600 body-font">
   <div class="container px-5 py-24 mx-auto">
     <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
-      <div class="p-4 md:w-1/3 sm:mb-0 mb-6" *ngFor="let subCat of subCategory">
+      <div class="p-4 md:w-1/3 sm:mb-0 mb-6" *ngFor="let cate of category">
         <div class="rounded-lg h-64 overflow-hidden">
           <img
             alt="content"
             class="object-cover object-center h-full w-full"
-            src="/assets/images/subcategory/{{ subCat.image }}"
+            src="/assets/images/category/{{ cate.image }}"
           />
         </div>
         <a
           class="text-indigo-500 inline-flex items-center mt-3"
-          href="javascript:void(0)"
-          >{{ subCat.name }}
+          [routerLink]="['/category', branch.branch_id, cate.name]"
+          >{{ cate.name }}
           <svg
             fill="none"
             stroke="currentColor"

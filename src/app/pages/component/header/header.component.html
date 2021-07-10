@@ -20,6 +20,7 @@
         mb-4
         md:mb-0
       "
+      routerLink="/"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -97,7 +98,6 @@
                     whitespace-no-wrap
                   "
                   [routerLink]="['/branch', branch.branch_id]"
-                  [state]="branch"
                   >{{ branch.name }}</a
                 >
               </li>

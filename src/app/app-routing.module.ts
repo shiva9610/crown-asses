@@ -8,15 +8,15 @@ const routes: Routes = [
       {
         path: 'branch',
         loadChildren: () =>
-          import('./pages/category/category.module').then(
-            (m) => m.CategoryModule
+          import('./pages/branch/branch.module').then(
+            (m) => m.BranchModule
           ),
       },
       {
         path: 'category',
         loadChildren: () =>
-          import('./pages/subcategory/subcategory.module').then(
-            (m) => m.SubcategoryModule
+          import('./pages/category/category.module').then(
+            (m) => m.CategoryModule
           ),
       },
       {
